@@ -11,7 +11,7 @@ Console.WriteLine("Введите номер дня недели");
 
 string? indexString = Console.ReadLine();
 
-var index = int.Parse(indexString!);
+int index = int.Parse(indexString!);
 
 if (index == 1)
 Console.WriteLine("Понедельник");

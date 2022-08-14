@@ -4,14 +4,24 @@
 // 782-> 8
 // 918-> 1
 
-Console.WriteLine("Введите трехзначное число.\nИ получите на выходе вторую цифру числа.\nВыход из программы наберите - ! и нажмите Enter.");
+Console.WriteLine("Введите трехзначное число.\nИ получите на выходе вторую цифру числа.");
 
-while (true)
+string? indexString = Console.ReadLine();
+
+var index = int.Parse(indexString!);
+
+if (index < 0)
+    index *= (-1);
+
+if (index > 99 && index < 1000)
+
 {
-    string input = Console.ReadLine();
-    if(!input.Equals("!"))
-    Console.WriteLine("{0}->{1}", input, input[1]);
-    else
-    break;
-    
+    index /= 10;
+    long result = index % 10;
+    Console.WriteLine("Результат:" + result);
 }
+
+    else
+    {
+        Console.WriteLine("Вы ввели не трехзначное число. Попробуйте снова.");
+    }
